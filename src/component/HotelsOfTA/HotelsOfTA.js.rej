@@ -1,0 +1,11 @@
+diff a/Client_Project/src/component/HotelsOfTA/HotelsOfTA.js b/Client_Project/src/component/HotelsOfTA/HotelsOfTA.js	(rejected hunks)
+@@ -9,8 +9,7 @@
+ 			selected: null,
+ 			hotel: '',
+ 			lstCountry: [],
+-			temp:'',
+-
++			cities:[]
+ 		};
+ 	},
+ 	methods: {

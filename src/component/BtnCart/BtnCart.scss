@@ -1,0 +1,192 @@
+/* stylelint-disable-next-line block-no-empty */
+.fab-tooltip.tooltip {
+	display: block !important;
+	padding: 4px;
+	z-index: 10000;
+}
+
+.fab-tooltip.tooltip .tooltip-inner {
+	background: #333333;
+	color: white;
+	border-radius: 0px;
+	padding: 5px 10px 4px;
+}
+
+.fab-tooltip.tooltip tooltip-arrow {
+	display: none;
+}
+
+.fab-tooltip.tooltip[aria-hidden='true'] {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .15s, visibility .15s;
+}
+
+.fab-tooltip.tooltip[aria-hidden='false'] {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity .15s;
+}
+.animated.quick {
+	-webkit-animation-duration: .7s !important;
+	animation-duration: .7s !important;
+}
+
+.fab-wrapper {
+	z-index: 999;
+}
+
+.fab-main {
+	border-radius: 100px;
+	/*width: 65px;*/
+	/*height: 65px;*/
+	padding: 30px;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20), 0 4px 4px rgba(0, 0, 0, 0.15);
+	z-index: 2;
+	justify-content: center;
+}
+
+.fab-main .material-icons {
+	color: white;
+	-webkit-transition: .4s all;
+	-moz-transition: .4s all;
+	transition: .4s all;
+	margin: 0px auto;
+}
+
+.fab-main .material-icons.main {
+	opacity: 1;
+	position: absolute;
+}
+
+.fab-main .material-icons.close {
+	opacity: 0;
+	position: absolute;
+}
+
+.fab-main .material-icons.main.rotate {
+	-ms-transform: rotate(360deg); /* IE 9 */
+	-webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+	transform: rotate(360deg);
+	opacity: 0;
+	-webkit-transition: opacity .3s ease-in, -webkit-transform .4s; /* Safari */
+	transition: opacity .3s ease-in, transform .4s;
+}
+
+.fab-main .material-icons.close.rotate {
+	-ms-transform: rotate(360deg); /* IE 9 */
+	-webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+	transform: rotate(360deg);
+	opacity: 1;
+	-webkit-transition: opacity .3s ease-in, -webkit-transform .4s; /* Safari */
+	transition: opacity .3s ease-in, transform .4s;
+}
+
+.fab-list {
+	position: relative;
+	z-index: 1;
+	margin: 2vh 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.fab-list li {
+	/*width: 50px;*/
+	/*height: 50px;*/
+	padding: 10px;
+	margin-top: 2vh;
+	display: flex;
+	align-items: center;
+	border-radius: 100px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20), 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.fab-list li .material-icons {
+	color: white;
+	margin: 0px auto;
+}
+.borderCart{
+	vertical-align: super;
+	font-size: 1rem;
+}
+.pointer {
+	cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0 !important;
+}
+
+.fab-wrapper .actions-container {
+	overflow: hidden;
+	z-index: 0;
+	position: relative;
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+	font-size: 18px;
+}
+
+.material-icons.md-24 {
+	font-size: 24px;
+}
+
+.material-icons.md-36 {
+	font-size: 36px;
+}
+
+.material-icons.md-48 {
+	font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+	color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+	color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+	color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+	.fab-list {
+		margin: 2vh 0;
+	}
+
+	.fab-list li {
+		/*width: 40px;*/
+		/*height: 40px;*/
+		/*padding: .6rem;*/
+	}
+
+	.fab-list li i {
+		/*font-size: 24px !important;*/
+	}
+
+	.fab-main {
+		/*width: 55px;*/
+		/*height: 55px;*/
+		/*padding: 1.5rem;*/
+	}
+
+	.fab-main i {
+		/*font-size: 34px !important;*/
+	}
+
+}

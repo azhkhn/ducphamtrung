@@ -1,0 +1,162 @@
+@media(min-width: 1200px){
+	#applyforaccess{
+		min-height: 350px;
+	}
+}
+@media(min-width: 1400px){
+	#applyforaccess{
+		min-height: 800px;
+	}
+}
+#applyforaccess{
+	max-width: 1110px;
+	margin: auto !important;
+	.nameHotel{
+		color: #000;
+		font-weight: bold;
+	}
+	.content{
+		background-color:#fff;
+		border-radius:6px;
+		margin-bottom:5px;
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+		height: 55px;
+	}
+	.btnt{
+		width: 138px;
+		height: 30px;
+		border-radius: 5px;
+		border: solid 1px var(--azure);
+	}
+	.perpage{
+		float: right;
+	}
+	.Property{
+		width: 43%;
+	}
+	.Type{
+		width: 20%;
+	}
+	.Location{
+		width: 20%;
+	}
+	.actions{
+		width: 20%;
+		text-align: center;
+	}
+	#breadcrumd{
+		background-color: white;
+	}
+	.btnApply{
+		border-radius: 5px;
+
+	}
+	.applyNameHotel{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.table-hotels{
+		margin-right: 20px;
+	//	margin-left:20px;
+			thead{
+				tr{
+					th:first-child{
+						background-color: #0b2e4d;
+						// border-radius: 20px 0px 0px 0px;
+						color: white;
+					}
+					th:last-child{
+						background-color: #0b2e4d;
+						// border-radius: 0px 20px 0px 0px;
+						color: white;
+					}
+					th{
+						background-color: #0b2e4d;
+						border: none;
+						color: white;
+					}
+				}
+			}
+			td{
+				color: #0b2e4d;
+				font-weight: 550;
+			}
+
+		// button {
+		// 	border-radius: 20px;
+		// 	width: 150px;
+		// 	color: #0b2e4d;
+		// 	height: 35px;
+		// 	&:disabled{
+		// 		background-color: gray;
+		// 		color: white;
+		// 	}
+		// }
+
+		// a.disabled{
+		// 		background-color: gray;
+		// 		border-radius: 20px;
+		// 		width: 160px;
+		// 	}
+	}
+	.colbtn{
+		display: table;
+	}
+	.rowbtn{
+		display: table-cell;
+		vertical-align: middle;
+
+		#btnStatus{
+			width: 138px;
+			height: 30px;
+			border-radius: 5px;
+			border: 1px solid #258fe0;
+
+		}
+		#btnStatuss{
+			width: 138px;
+			height: 30px;
+			border-radius: 5px;
+			color:  #258fe0;
+			border: 1px solid #258fe0;
+
+		}
+	}
+	#applyAccess{
+		//box-shadow:  0px 2px 10px #888888;
+		thead{
+			display: none;
+
+		}
+	}
+	.table-hotels thead tr th:last-child{
+		text-align: center;
+	}
+}
+.payment{
+    background-color: #0b2e4d;
+    border-radius: 4px 4px 0px 0px;
+    color: white;
+    height: 40px;
+	line-height: 40px;
+}
+#modalInfo{
+    .modal-body{
+        p{
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+    }
+    .btn-yellow{
+        border-radius: 20px;
+        width: 110px;
+        color: white;
+        background-color: #f1a91d;
+        margin: 10px 10px 10px 10px;
+    }
+    button,.btn-radius{
+        width: 110px;
+
+        margin: 10px 10px 10px 10px;
+    }
+}

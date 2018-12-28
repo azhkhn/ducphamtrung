@@ -1,0 +1,70 @@
+@media (min-width:1300px) {
+
+
+}
+@media (min-width:1440px) {
+
+}
+@media (min-width:1600px) {
+	.ChartDashBoard{
+
+		min-height: 800px;
+		max-width: 1400px;
+		margin: auto;
+	}
+
+}
+.ChartDashBoard{
+	max-width: 1170px;
+	margin: auto !important;
+	margin-top: 80px;
+	margin-bottom: 50px;
+	padding:0 15px;
+	padding-bottom: 70px;
+	.vdp-datepicker{
+		input{
+			width:100%;
+			padding-right: 25px;
+			border: 0px;
+			text-align: right;
+		}
+	}
+	.vdp-datepicker__calendar{
+		right:10px;
+		z-index: 2;
+	}
+	.apexcharts-tooltip{
+		z-index: 2 !important;
+	}
+}
+.apexcharts-xaxistooltip{
+	z-index: 1 !important;
+}
+.apexcharts-toolbar{
+	z-index:1 !important;
+}
+.booking-status {
+    background-color: white;
+	margin-bottom: -10px;
+	border-radius: 8px;
+}
+.booking-by-staff {
+    background-color: white;
+}
+.revenue {
+    background-color: white;
+	margin-bottom: 10px;
+	border-radius: 8px;
+}
+.booking {
+    background-color: white;
+    margin-bottom: 10px;
+}
+.staff-reveneu {
+    background-color: white;
+	margin-bottom: 10px;
+	border-radius: 8px;
+}
+.apexcharts-canvas{
+	margin: auto;
+}

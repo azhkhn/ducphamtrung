@@ -1,0 +1,347 @@
+@media (min-width: 1349px){
+	#avaiSearch{
+		overflow: hidden;
+	}
+	.imgback{
+		min-height: 640px;
+	}
+	.cardSearch{
+		width: 1170px;
+		position: absolute;
+		top: 20%;
+		margin: auto;
+		left: 0px;
+		right: 0px;
+		padding-right: 15px;
+		padding-left: 15px;
+		color: #fff;
+		text-align: left;
+    }
+}
+@media (min-width: 1920px){
+	#avaiSearch{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	.imgback{
+		min-height: 768px;
+	}
+	.cardSearch{
+		width: 90%;
+		position: absolute;
+		top: 30%;
+		margin: auto;
+		left: 0px;
+		right: 0px;
+		padding-right: 15px;
+		color: #fff;
+		text-align: left;
+	}
+}
+@media (min-width:1600px) {
+	.cardSearch{
+		max-width: 1170px;
+		min-width: 1110px;
+		margin: auto;
+	}
+	#avaiSearch{
+		min-height: 950px;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	.imgback{
+		min-height: 950px;
+	}
+}
+	#avaiSearch{
+        position: relative;
+		width: 100%;
+	 }
+    .multiselect__content-wrapper{
+        top:70px;
+    }
+     .location{
+        opacity: 1;
+     }
+     .search{
+        width: 160px;
+ 		height: 70px;
+  		border-radius: 5px;
+     }
+     .testt{
+         width: 100%;
+         height:70px;
+         border-radius: 4px;
+		 background-color: #fff;
+		 border: 0px;
+     }
+     .imgback{
+        height: 100%;
+        width: 100%;
+     }
+     .positive{
+        position: relative;
+     }
+     .datepicker__wrapper {
+        height: 45px;
+        border-radius: 4px;
+        }
+  .coll{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+#avaiSearch{
+	.datepicker__month-day--selected{
+		background-color: rgb(37, 143, 224) !important;
+	}
+	.datepicker__month-day--first-day-selected, .datepicker__month-day--last-day-selected {
+		background-color: rgb(37, 143, 224) !important;
+	}
+    .Adultp{
+        margin:0 !important;
+    }
+    .multiselect__single {
+        padding-left: 5px;
+        margin-bottom: 8px;
+        padding-top: 2px;
+
+    }
+	.multiselect__tags {
+		height: 100%;
+	    display: block;
+	    padding: 25px 40px 0 35px;
+	    border-radius: 5px;
+	    background: #fff;
+	    font-size: 14px;
+	    border: 0px;
+    }
+    .multiSelect{
+        width: 255px;
+  		height: 70px;
+ 		border-radius: 5px;
+  		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+  		background-color: var(--white);
+    }
+    .multiselect__select:before {
+        border-color: #258fdf transparent transparent;
+    }
+    .multiselect__select {
+        height:65px;
+    }
+    .datetimeHotel{
+        width: 350px;
+		height: 70px;
+		border-radius: 5px;
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+		background-color: var(--white);
+    }
+    .selectRoomdetail{
+        width: 255px;
+		height: 70px;
+		border-radius: 5px;
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+		background-color: var(--white);
+    }
+    .datepicker__dummy-input:first-child {
+        background: transparent url('~icons/Arrow Right-gray-mix.png') no-repeat 100%/50px !important;
+        width: calc(60% - 4px);
+		padding-left: 30px;
+	}
+	.datepicker__dummy-input {
+		 width: calc(40% + 4px);
+		padding-left: 8px;
+	}
+	.datepicker__wrapper {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 70px;
+		background: #fff url('~icons/Calendar-gray.png') no-repeat 11px/25px;
+	}
+	.datepicker__clear-button{
+        height:60px;
+		font-size: 18px;
+		color: #258fdf !important;
+	}
+    .datepicker__dummy-input{
+        padding-top:5px;
+        height:70px;
+    }
+    .datepicker{
+      top:80px;
+      border-radius:6px;
+    }
+	.contentSearch{
+		text-align: left;
+		z-index:3;
+		background: rgba(0, 0, 0, 0.25);
+		position: absolute;
+		top: 0px;
+		margin: auto;
+		left: 0px;
+		right: 0px; height: 100%;
+        width: 100%;
+	}
+#dropdown-menu{
+    width: 100%;
+}
+#float-left{
+    div{
+        float: left;
+        margin:  10px 20px 0px 0px;
+    }
+    padding: 0px 0px 0px 40px;
+}
+.input-add{
+    width: 100px;
+    .input-group{
+        button{
+            border-radius: 0px !important;
+           background-color: #e5e5e5 !important;
+        }
+        input[type=text]{
+            background-color: white;
+            text-align: center;
+        }
+    }
+}
+#menu{
+    position: relative;
+    button{
+
+        background-color: white;
+        border: 1px solid #e5e5e5;
+    }
+}
+#collapse1{
+    position: absolute;
+    z-index: 1000000;
+    top: 100px;
+    left:15px;
+    .card{
+        margin: 0;
+		width: 255px;
+        text-align: center;
+        padding:0;
+        // .card-body{
+        //     padding-right:0;
+        //     padding-left:10px;
+        // }
+    }
+}
+.btn-input{
+    width: 100%;
+    height: 45px;
+}
+#datePicker{
+	width: 100%;
+}
+.datepicker__dummy-wrapper{
+   border-radius: 4px;
+    height: 45px;
+	outline: none;
+	border: 0px;
+	.datepicker__inner{
+		display: none;
+	}
+}
+.datepicker__clear-button{
+    &:focus{
+       outline: none !important;
+    }
+}
+.bg-light {
+    background-color: rgba(255, 255, 255,0.8);
+}
+full img
+.card{
+    width: 80%;
+   margin: 100px;
+   margin-bottom: 200px;
+    position: none;
+    border: none;
+     background-color:none;
+}
+.card-footer{
+    background-color: white;
+}
+#bobycoll{
+   // max-height: 150px;
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    color: black;
+    h5{
+        text-align: left;
+        margin-left: 10%;
+    }
+    max-height: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 6;
+    .btnunit{
+        width: 100%;
+    }
+}
+.ddown{
+  width: 100%;
+    button{
+        border: 1px solid #ccc;
+        background-color: white;
+        color: black;
+        width: 100%;
+        text-align: right;
+    }
+}
+.btn-search{
+    a{
+        width: 30%;
+
+
+    }
+}
+}
+.datetime{
+	background-color: #f8f9fa!important;
+}
+.btn-to-top {
+    width: 60px;
+    height: 60px;
+    padding: 10px 16px;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .diffAdult{
+    border-right: 1px solid #ccc;
+    padding: 0%;
+    button{
+        padding: initial;
+    }
+}
+.textunitAdultsRoom{
+    margin: auto;
+    padding: 0px;
+    .formselectchild{
+        border: 0px;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        height: 30px;
+    }
+}
+.addAdult{
+    border-left: 1px solid #ccc;
+    padding: 0%;
+    button{
+        padding: initial;
+    }
+}
+.rowAdult{
+    border: 1px solid #ccc;
+    border-radius: 5px ;
+}
+
+

@@ -1,0 +1,32 @@
+@media(min-width: 1600px){
+	#Content-DashBroad{
+		max-width: 1400px;
+		margin: auto;
+	}
+}
+#DashBroad{
+  margin: 20px 0px 50px 0px;
+  text-align: center;
+  position: relative;
+  #nav{
+      margin: auto;
+      button{
+          display: block;
+          width: 180px;
+          height: 100px;
+          border: none;
+          border: 1px solid #e5e5e5;
+          border-radius: 0px;
+      }
+  }
+
+    img.icon-dashbroad{
+        width: 60px;
+        height: 60px;
+        margin: 0px 0px 10px 0px;
+
+
+    }
+
+
+}

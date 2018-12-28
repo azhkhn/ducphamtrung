@@ -1,0 +1,212 @@
+
+@media(min-width: 1200px){
+	#AffiliateNetwork{
+		min-height: 350px;
+	}
+}
+@media(min-width: 1400px){
+	#AffiliateNetwork{
+		min-height: 750px;
+	}
+}
+#nameHotel{
+	color: rgb(0, 112, 192);
+}
+#AffiliateNetwork{
+	max-width: 1110px;
+	margin: auto !important;
+	.nameHotel{
+		color: #000;
+		font-weight: bold;
+		margin-left: 15px;
+	}
+	.level{
+		background-color: #f2f2f2;
+		height: 24px;
+		line-height: 24px;
+		width: 100%;
+		text-align: center;
+		border-radius: 10px;
+	}
+	.btnyellow{
+		width: 190px;
+		height: 30px;
+		border-radius: 5px;
+		background-color: #d9390d;
+	}
+	.collapse.show {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.colcontent{
+		background-color:#fff;
+		border-radius:6px;
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	}
+	.rowcontent{
+		//background-color:#fff;
+		//border-radius:6px;
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+
+	}
+	.perpage{
+		float: right;
+	}
+	.Property{
+		width: 18%;
+	}
+	.Type{
+		width: 15%;
+	}
+	.Location{
+		text-align: center;
+		width: 12%;
+	}
+	.Status{
+		text-align: center;
+		width: 20%;
+	}
+	.Actions{
+		text-align: center;
+		// width: 35%;
+	}
+	#breadcrumd{
+		background-color: white;
+	}
+	.logResponse{
+	//	border-bottom: 0.1rem solid #cccccc;
+	}
+	.table-hotels{
+		margin-right: 20px;
+			thead{
+				tr{
+					th:first-child{
+						background-color: #0b2e4d;
+						// border-radius: 20px 0px 0px 0px;
+						color: white;
+					}
+					th:last-child{
+						background-color: #0b2e4d;
+						// border-radius: 0px 20px 0px 0px;
+						color: white;
+					}
+					th{
+						background-color: #0b2e4d;
+						border: none;
+						color: white;
+					}
+				}
+			}
+			td{
+				color: #0b2e4d;
+				font-weight: 550;
+			}
+	}
+	#tbl-blue{
+		// td{
+		// 	width: 16.6667%;
+		// }
+	}
+	.btnConfirm{
+		width: 110px;
+		border-radius: 5px;
+	}
+	#btnAction{
+		width: 150px;
+		height: 30px;
+	}
+	#btnStatus{
+		width: 100%;
+		width: 150px;
+		height: 30px;
+		margin-top: 4px;
+		a.disabled{
+			width: 100%;
+		}
+}
+.rowHistory{
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	border-radius: 0 0 6px 6px;
+	padding: 0 20px;
+}
+.colHistory{
+	background-color: #fff;
+}
+	#cardDetail{
+		thead{
+			tr{
+				th{
+					background-color: white;
+					color: #0b2e4d;
+				}
+			}
+		}
+	}
+	#confirmed{
+		button{
+			width: 100px;
+			padding: 5px 10px 5px 10px;
+			margin: 0px 10px 0px 0px;
+			&:hover{
+				background-color: #f1a91d;
+				color:white;
+			}
+		}
+	}
+	#deactive{
+		color: #0b2e4d;
+		h4{
+			margin: 0px 0px 0px 13px;
+		}
+		textarea{
+			border-radius: 10px;
+			margin: 10px 0px 10px 0px;
+		}
+		.alert{
+			border-radius: 10px;
+			color: #0b2e4d;
+		}
+		button{
+			padding: 5px 20px 5px 20px;
+			margin: 0px 10px 0px 0px;
+			&:hover{
+				color:white;
+			}
+		}
+	}
+	#cancelModal{
+		p{
+			font-size: 14px;
+		}
+		#textarea1{
+			border-radius: 8px;
+			margin: 10px 0px 10px 0px;
+		}
+		.btn-yellow{
+			padding: 5px 20px 5px 20px;
+			margin: 0;
+			&:hover{
+				color:white;
+			}
+		}
+	}
+	#rejectModal{
+		p{
+			font-size: 14px;
+		}
+		#textarea1{
+			border-radius: 8px;
+			margin: 10px 0px 10px 0px;
+		}
+		.btn-yellow{
+			padding: 5px 20px 5px 20px;
+			margin: 0;
+			&:hover{
+				color:white;
+			}
+		}
+	}
+}
+
+

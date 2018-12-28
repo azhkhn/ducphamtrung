@@ -1,0 +1,138 @@
+/* stylelint-disable-next-line block-no-empty */
+
+@media (min-width:1300px) {
+	.paymentreturn{
+		margin-left: 0;
+		margin-right:0;
+		min-height: 500px;
+		margin: auto;
+	}
+
+}
+@media (min-width:1440px) {
+	.paymentreturn{
+		margin-left: 0;
+		margin-right:0;
+		min-height: 600px;
+		margin: auto;
+	}
+}
+@media (min-width:1600px) {
+	.paymentreturn{
+		margin-left: 0;
+		margin-right:0;
+		min-height: 800px;
+		max-width: 1400px;
+		margin: auto;
+	}
+}
+.paymentreturn{
+	max-width: 1170px;
+	margin: auto !important;
+}
+.textleft{
+	text-align: left;
+	border-left: 1;
+}
+.textright{
+    text-align: right;
+    margin-right: 25px;
+
+}
+.paymentD{
+	background-color: #ccc;
+    border-radius: 4px 4px 0px 0px;
+
+    height: 40px;
+	line-height: 40px;
+}
+#tableviewD{
+    tr{
+        border-top: none;
+        th:first-child{
+
+            border-radius: 4px 0px 0px 0px;
+
+			border-bottom: 0px !important;
+			padding-left: 30px
+
+        }
+        th:last-child{
+
+			border-bottom: 0px !important;
+           border-radius: 0px 4px 0px 0px;
+
+			text-align: right;
+    		padding-right: 30px;
+        }
+        th{
+
+            border-top: none;
+
+        }
+    }
+
+
+td{
+    font-weight: 550;
+
+}}
+.borderbottom{
+    border-bottom: 1px solid #ccc;
+}
+.printVoucher{
+
+}
+.colleftView{
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding: 15px;
+}
+.colrightView{
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 80px;
+}
+.colrightViewHotel{
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 30px;
+}
+.colrightViewAfter{
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+.bookingID{
+	border-bottom: 1px solid #f5f5f5;
+	padding-bottom: 30px;
+}
+.schedule{
+	padding-top: 30px;
+	border-bottom: 1px solid #f5f5f5;
+	padding-bottom: 30px;
+}
+.CheckInDate{
+	height: 40px;
+	border-radius: 5px;
+	background-color: #f5f5f5;
+	line-height: 40px;
+	text-align: center;
+}
+.Contact{
+	height: 30px;
+	border-radius: 5px;
+	background-color: #f5f5f5;
+	line-height: 30px;
+	padding-left: 10px;
+
+}

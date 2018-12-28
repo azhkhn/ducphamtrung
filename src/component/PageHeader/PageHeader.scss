@@ -1,0 +1,21 @@
+/* stylelint-disable-next-line block-no-empty */
+:local {
+
+}
+@media (min-width:1300px) {
+
+}
+@media (min-width:1440px) {
+
+}
+@media (min-width:1600px) {
+	.mainNav{
+		//min-height: 800px;
+		max-width: 1170px;
+		min-width: 1170px;
+		margin: auto;
+	}
+}
+#headerLogin{
+	background-color: #fff;
+}

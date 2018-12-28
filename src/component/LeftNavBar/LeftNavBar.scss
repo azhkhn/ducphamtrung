@@ -1,0 +1,27 @@
+.navbar-left{
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li  {
+		color: #000;
+		font-weight: bold;
+		button{
+			color: #000;
+			font-weight: bold;
+		}
+
+    }
+
+}
+.navbar-left-item{
+
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    /* background-color: #fff; */
+    /* border: 1px solid rgba(0, 0, 0, 0.125); */
+
+}

@@ -1,0 +1,20 @@
+
+	button[type='button'] {
+		border-radius: 20px;
+		//width: 150px;
+	}
+	@media (min-width:1300px) {
+
+	}
+	@media (min-width:1440px) {
+
+	}
+	@media (min-width:1600px) {
+		#nav{
+			//min-height: 800px;
+
+			margin: auto;
+			box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+		}
+	}
+

@@ -1,0 +1,317 @@
+@media (min-width:1300px) {
+
+
+}
+@media (min-width:1440px) {
+
+}
+@media (min-width:1600px) {
+	#Payment1{
+		min-height: 800px;
+		max-width: 1400px;
+		margin: auto;
+	}
+
+}
+#Payment1{
+	max-width: 1170px;
+	margin: auto !important;
+	padding-bottom: 50px;
+
+    .card{
+        border: none;
+    }
+    .card-img {
+        width: 100%;
+        border-radius: 5px 0 0 5px;
+    }
+    .textInfo{
+        padding-left: 10px;
+    }
+	.container {
+	}
+	.progressbar {
+		counter-reset: step;
+	}
+	.progressbar li {
+        
+		list-style-type: none;
+		width: 33.333%;
+		float: left;
+		font-size: 12px;
+		position: relative;
+		text-align: center;
+
+		color: #7d7d7d;
+	}
+	.progressbar li:before {
+       
+		width: 30px;
+		height: 30px;
+		content: '';
+		// counter-increment: step;
+		line-height: 30px;
+		display: block;
+		text-align: center;
+		margin: 0 auto 10px auto;
+		border-radius: 50%;
+		z-index: 2;
+
+	}
+	.progressbar .active1:before{
+
+			background-image: url('~icons/Check Mark-blue.png');
+			background-position: center;
+
+
+	}
+	.progressbar .active2:before{
+
+		background-image: url('~icons/register process circle-blue.png');
+		background-position: center;
+	}
+	.progressbar .noActive:before{
+
+		background-image: url('~icons/register process circle-gray.png');
+		background-position: center;
+	}
+
+	.progressbar li:after {
+		width: 80%;
+		height: 2px;
+		margin-left: 45px;
+		content: '';
+		position: absolute;
+		background-color: #ccc;
+		top: 15px;
+		left: -52%;
+	}
+	.progressbar li:first-child:after {
+		content: none;
+	}
+	.progressbar li.active {
+		color: #000;
+	}
+	.progressbar li.active:before {
+		border-color: #55b776;
+	}
+	.progressbar li.active + li:after {
+		background-color: #ccc;
+	}
+}
+
+.formOptional{
+    padding-left: 5px;
+}
+.headerPayment{
+    
+	font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+.GuestInformation{
+    margin-top: 20px;
+
+	// height: 240px;
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+
+}
+.formGuestInformation{
+
+   div{
+    margin: 0px 0px;
+
+   }
+   input{
+       width: 100%;
+       height: 40px;
+      border-radius: 5px;
+
+   }
+   .multiselect__tags{
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+}
+.test{
+    width: 100%;
+    border-radius: 4px;
+    background-color: #fff;
+
+}
+.room{
+    margin:5px 0px;
+
+    div{
+    //    /
+    }
+    input{
+        //margin-top: 10px;
+        width: 100%;
+        height: 35px;
+        border-radius: 5px 5px 5px 5px;
+    }
+    select{
+        width: 70%;
+        height: 35px;
+        border-radius: 5px 5px 5px 5px;
+    }
+    h5{
+        margin-left: 20px;
+    }
+    .inputttt{
+        width: 100%;
+        height: 50px;
+       border-radius: 5px;
+    }
+}
+.CustomerInformation{
+
+    margin: 10px;
+}
+
+.Optionalextrasoradditionalservices{
+    margin-top: 20px;
+	// width: 730px;
+	// height: 165px;
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+}
+
+
+.ChooseAPaymentMethod{
+    margin-top: 20px;
+//     width: 730px;
+//   height: 130px;
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: var(--white);
+
+
+}
+.vadiate{
+    width: 100%;
+    color: red;
+    text-align: center;
+
+}
+#paymentbar{
+	// width: 350px;
+	// height: 600px;
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+    width: 95%;
+    border-radius: 8px 8px 10px 10px;
+    margin: 20px 0px;
+    select,input[type="text"]{
+        border-radius: 10px;
+    }
+    a{
+        color: blue;
+    }
+
+}
+// p{
+//     margin: 100px;
+// }
+#title{
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+#formReservationInfo{
+	padding: 5%;
+	padding-top: 1%;
+    label{
+        font-weight: bold;
+    }
+    // border:none;
+    // border-radius: 8px 8px 10px 10px;
+    // background-color: rgb(235, 241, 241);
+
+}
+.header{
+    // background-color: #0b2e4d;
+    // color: white;
+    // border-radius: 5px 5px 0px 0px;
+    // height: 30px;
+    // line-height: 30px;
+    // padding-left: 10px;
+}
+.btnn{
+    margin-left: 10%;
+}
+.input{
+   margin: 20px 0px 20px 0px;
+}
+.btnnn{
+   border-radius: 10px;
+}
+//
+.diffAdult{
+    border-right: 1px solid #ccc;
+    padding: 0%;
+
+}
+.textunitAdultsRoom{
+    margin: auto;
+}
+.addAdult{
+    border-left: 1px solid #ccc;
+    padding: 0%;
+
+}
+.rowAdult{
+    border: 1px solid #ccc;
+    border-radius: 5px ;
+
+
+}
+.rowselect1{
+    border: 1px solid #ccc;
+    border-radius: 5px ;
+    //width: 95%;
+    margin: auto;
+    background-color: #fff;
+    height: 35px;
+    button{
+        width: 25%;
+    }
+
+}
+.AdultChil{
+    //width: 70%;
+}
+.slview{
+    width: 50%;
+    text-align: center;
+    line-height: 35px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.spinner{
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(32, 32, 32, 0.5), rgba(37, 37, 37, 0.6));
+   .spin{
+       position: absolute;
+       top: 50%;
+       right: 50%;
+
+   }
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

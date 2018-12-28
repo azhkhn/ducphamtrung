@@ -1,0 +1,182 @@
+@media (min-width:1300px) {
+
+
+}
+@media (min-width:1440px) {
+
+}
+@media (min-width:1600px) {
+	#ReservationSearch{
+		min-height: 800px;
+		max-width: 1350px;
+		margin: auto;
+	}
+
+}
+#ReservationSearch{
+	max-width: 1170px;
+	margin: auto !important;
+	#base{
+		margin: 20px 20px 0px 20px;
+	}
+	#searchbarReservation{
+		padding: 20px;
+		border-radius: 5px 5px 0 0;
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+		background-color: #fff;
+	}
+	#breadcrumd{
+		background-color: white;
+	}
+	.table-hotels{
+		padding-bottom: 200px;
+			thead{
+				tr{
+					th:first-child{
+						background-color: #f5f5f5;
+						color: black;
+						text-align: left;
+					}
+					th:last-child{
+						background-color: #f5f5f5;
+						color: black;
+						text-align: center;
+					}
+					th{
+						background-color: #f5f5f5;
+						border: none;
+						color: black;
+					}
+				}
+			}
+			td{
+				color: #000000;
+				font-weight: 550;
+				background-color: white;
+			}
+
+		button {
+			border-radius: 20px;
+			width: 150px;
+			color: #0b2e4d;
+			height: 35px;
+			&:disabled{
+				background-color: gray;
+				color: white;
+			}
+		}
+
+		a.disabled{
+				background-color: gray;
+				border-radius: 20px;
+				width: 160px;
+			}
+	}
+	.vdp-datepicker{
+		input{
+			height: 40px;
+			width:100%;
+			padding-left: 30px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+	}
+	.payment{
+    background-color: #0b2e4d;
+    border-radius: 4px 4px 0px 0px;
+    color: white;
+    height: 40px;
+	line-height: 40px;
+}
+	#searchBy{
+		height: 40px;
+		width:100%;
+
+		border-radius: 5px;
+	}
+	#hotel{
+		height: 40px;
+		width:100%;
+
+		border-radius: 5px;
+	}
+	#bookingCode{
+		height: 40px;
+		width:100%;
+
+		border-radius: 5px;
+	}
+	#Booking{
+		height: 40px;
+		width:100%;
+
+		border-radius: 5px;
+	}
+	#reserSearch{
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+		thead{
+			height: 37px;
+			border-radius: 5px;
+			background-color: #f5f5f5;
+		}
+	}
+	.poiter :hover{
+		cursor: pointer;
+	}
+	.Hotel{
+		text-align: left;
+		width: 150px;
+	}
+	.ReservationInfo{
+		width: 160px;
+	}
+	.Statuss{
+		text-align: left;
+	}
+	.User{
+		text-align: left;
+	}
+	.perpage{
+		float: right;
+	}
+	.borderDate1{
+		border-radius: 5px;
+		color: rgb(241, 204, 36);
+
+		padding: 2%;
+	}
+	.borderDate2{
+		border-radius: 5px;
+		color: rgb(18, 131, 236);
+		height: 25px;
+
+		padding: 2%;
+	}
+	.borderDate3{
+		border-radius: 5px;
+		color: rgb(236, 47, 14);
+		//width: 100px;
+		height: 25px;
+
+		padding: 2%;
+	}
+	.borderDate0{
+		border-radius: 5px;
+		color: rgb(121, 123, 124);
+		//width: 100px;
+		height: 25px;
+
+		padding: 2%;
+	}
+	.paymentfinished{
+		border-radius: 5px;
+		background-color: rgb(91, 155, 213);
+		color: whitesmoke;
+		width: 100px;
+		height: 25px;
+		text-align: center;
+		padding: 2%;
+	}
+
+}
+

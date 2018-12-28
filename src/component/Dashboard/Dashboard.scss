@@ -1,0 +1,146 @@
+// @media(min-width: 1200px){
+// 	.displayPage{
+// 		min-height: 350px;
+// 	}
+// }
+// @media(min-width: 1400px){
+// 	.displayPage{
+// 		min-height: 650px;
+// 	}
+// }
+// @media(min-width: 1600px){
+// 	.displayPage{
+// 		max-width: 1400px;
+// 		margin: auto;
+// 	}
+// }
+.md-drawer {
+    width: 230px;
+    max-width: calc(100vw - 125px);
+  }
+  .md-icon-button.md-dense{
+	  width: 46px;
+  }
+  .md-app {
+    min-height: 500px;
+	border: 1px solid rgba(#000, .12);
+	margin-bottom: 50px;
+  }
+  $list-width: 320px;
+
+  .full-control {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+  }
+
+  .list {
+    width: $list-width;
+  }
+  .md-content.md-theme-default{
+	  background-color: #f2f2f2 !important;
+  }
+  .md-list-item.md-inset .md-list-item-content {
+    padding-left: 50px;
+}
+.dropdown-item{
+	padding: 0.25rem 0.5rem !important;
+}
+
+.color-option{
+    display: block;
+    float: left;
+    width: 50%;
+    height: 20px;
+}
+.color-option{
+	height: 25px;
+	width: 100px;
+}
+.indigo {
+    background-color: #3f51b5!important;
+}
+.green{
+	background-color: #4caf50!important;
+}
+.primary{
+	background-color: #2196f3!important;
+}
+
+  .full-control > .md-list {
+    width: $list-width;
+    max-width: 100%;
+    height: 400px;
+    display: inline-block;
+    overflow: auto;
+    border: 1px solid rgba(#000, .12);
+    vertical-align: top;
+  }
+
+  .control {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+    #navv{
+        width: 100%;
+        button{
+            display: block;
+            width: 100%;
+            height: 120px;
+            border: none;
+            border: 1px solid #e5e5e5;
+            border-radius: 0px;
+        }
+    }
+
+.statusbooking{
+   font-size: 18px;
+}
+.clear{
+    clear: both;
+}
+.btn1{
+    background-color: rgb(92, 124, 61);
+}
+.btn2{
+    background-color: rgb(241, 149, 11);
+}
+.btn3{
+    background-color: rgb(13, 122, 224);
+}
+.btn4{
+    background-color: rgb(240, 6, 53);
+}
+.viewdetail{
+	border-top: 1px solid white;
+	padding-top: 5px;
+}
+.tbl{
+    th{
+        display: none;
+    }
+
+}
+.rowcheck{
+    height: 30px;
+    border-radius:5px; text-align:center; color:white;
+    line-height: 30px;
+
+}
+.iconn{
+    transform: rotate(90deg) !important;
+}
+.iconn1{
+    transform: rotate(-25deg);
+}
+.perpage{
+	float: right;
+}
+#tableDashboard{
+     td {
+        max-width: 200px;
+    }
+}

@@ -1,0 +1,145 @@
+@media (min-width:1300px) {
+
+
+}
+@media (min-width:1440px) {
+
+}
+@media (min-width:1600px) {
+	#ViewBooking{
+		min-height: 800px;
+		max-width: 1400px;
+		margin: auto;
+	}
+
+}
+#ViewBooking{
+	max-width: 1170px;
+	margin: auto !important;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.colleftView{
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding: 15px;
+}
+.colrightView{
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 80px;
+}
+.colrightViewHotel{
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 30px;
+}
+.colrightViewAfter{
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+.bookingID{
+	border-bottom: 1px solid #f5f5f5;
+	padding-bottom: 30px;
+}
+.schedule{
+	padding-top: 30px;
+	border-bottom: 1px solid #f5f5f5;
+	padding-bottom: 30px;
+}
+.CheckInDate{
+	height: 40px;
+	border-radius: 5px;
+	background-color: #f5f5f5;
+	line-height: 40px;
+	text-align: center;
+}
+.Contact{
+	height: 30px;
+	border-radius: 5px;
+	background-color: #f5f5f5;
+	line-height: 30px;
+	padding-left: 10px;
+
+}
+.butt{
+    margin-bottom: 20px;
+}
+.li{
+    background-color: rgb(169, 218, 224);
+}
+.right{
+    margin-left: 30px;
+}
+.left{
+    margin-left: 20px;
+}
+.bt{
+	border-radius: 4px;
+	width: 160px;
+
+}
+.textleft{
+
+}
+.textright{
+    text-align: right;
+    margin-right: 25px;
+}
+.backcolor{
+    background-color: rgb(243, 243, 240);
+}
+
+ #tableview{
+    thead{
+        display: none;
+
+    }
+    tr{
+        border-top: none;
+        th:first-child{
+            border-radius: 4px 0px 0px 0px;
+            color: #000;
+            border-top: none;
+
+        }
+        th:last-child{
+           border-radius: 0px 4px 0px 0px;
+            color: #000;
+            text-align: right;
+            padding-right: 30px;
+        }
+        th{
+            border-top: none;
+            color: #000;
+        }
+    }
+
+
+td{
+    color: #0b2e4d;
+    font-weight: 550;
+
+}}
+.payment{
+    background-color: #fff;
+    border-radius: 4px 4px 0px 0px;
+    color: #000;
+    height: 40px;
+	line-height: 40px;
+}
+
+.boder{
+
+
+}

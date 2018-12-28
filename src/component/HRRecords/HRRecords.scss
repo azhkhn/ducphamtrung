@@ -1,0 +1,29 @@
+/* stylelint-disable-next-line block-no-empty */
+:local {
+
+}
+
+.md-field {
+	max-width: 300px;
+	margin-left: 75%;
+  }
+
+  .md-tabs{
+	  padding: 0 15px;
+  }
+  .md-tabs.md-theme-default .md-tabs-navigation .md-button{
+	  font-weight: bold;
+  }
+  .md-field{
+	  margin-left: 0 !important;
+  }
+.card {
+	background-color: transparent !important;
+	border: 0px !important;
+	img{
+		height: 226.77165354331px;
+	}
+	.card-body{
+		padding: 0 !important;
+	}
+}

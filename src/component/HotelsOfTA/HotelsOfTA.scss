@@ -1,0 +1,77 @@
+// @media(min-width: 1200px){
+// 	#hotelsOfTA{
+// 		min-height: 350px;
+// 	}
+// }
+// @media(min-width: 1400px){
+// 	#hotelsOfTA{
+// 		min-height: 650px;
+// 	}
+// }
+@media (min-width:1300px) {
+	.mainHotelOfTa{
+		min-height: 500px;
+	}
+
+}
+@media (min-width:1440px) {
+	.mainHotelOfTa{
+		min-height: 600px;
+	}
+}
+@media (min-width:1600px) {
+	.mainHotelOfTa{
+		min-height: 800px;
+		max-width: 1400px;
+		margin: auto;
+	}
+	// .mainSearch{
+	// 	max-width: 1400px;
+	// 	margin: auto;
+	// 	}
+}
+#hotelsOfTA{
+    padding: 100px 100px;
+
+}
+.mainHotelOfTa{
+
+	max-width: 1170px;
+	margin: auto !important;
+	margin-bottom:20px;
+}
+#searchbarr{
+	//width: 255px;
+	//height: 300px;
+	border-radius: 5px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+	background-color: var(--white);
+	.headerSearch{
+		width: 245px;
+		 height: 40px;
+		 p{
+			height: 24px;
+			font-size: 14px;
+			font-weight: bold;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: 1.71;
+			letter-spacing: normal;
+			color: #808080;
+			padding-top: 10px;
+			padding-left: 10px;
+		 }
+	}
+    .btsearch{
+        border-radius: 30px;
+            text-align: center;
+            background-color: #f1a91d;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+    }
+}
+#cal{
+	top:0;
+	display: inline-block;
+}
