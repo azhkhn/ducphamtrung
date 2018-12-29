@@ -58,7 +58,10 @@ export default {
 				address: '',
 				designation: '',
 			},
-			itemModal: null,
+			itemModal: {
+				name: '',
+				title: '',
+			},
 			previewImage: null,
 			variantEditUserGentlemen: '',
 			variantEditUserLady: '',
@@ -71,6 +74,7 @@ export default {
 					email: 'sdubbin0@geocities.com',
 					gender: 'Male',
 					title: 'Assistant Media Planner',
+					status: true,
 				},
 				{
 					id: 2,
@@ -78,6 +82,7 @@ export default {
 					email: 'odemageard1@spotify.com',
 					gender: 'Female',
 					title: 'Account Coordinator',
+					status: true,
 				},
 				{
 					id: 3,
@@ -85,6 +90,7 @@ export default {
 					email: 'vtaleworth2@google.ca',
 					gender: 'Male',
 					title: 'Community Outreach Specialist',
+					status: false,
 				},
 				{
 					id: 4,
@@ -92,6 +98,7 @@ export default {
 					email: 'lizkovitz3@youtu.be',
 					gender: 'Female',
 					title: 'Operator',
+					status: true,
 				},
 				{
 					id: 5,
@@ -99,6 +106,7 @@ export default {
 					email: 'tstave4@reference.com',
 					gender: 'Male',
 					title: 'Software Test Engineer III',
+					status: false,
 				},
 				{
 					id: 6,
@@ -106,6 +114,7 @@ export default {
 					email: 'kchipping5@scribd.com',
 					gender: 'Female',
 					title: 'Safety Technician II',
+					status: true,
 				},
 				{
 					id: 7,
@@ -113,6 +122,7 @@ export default {
 					email: 'hholyard6@howstuffworks.com',
 					gender: 'Female',
 					title: 'Internal Auditor',
+					status: false,
 				},
 				{
 					id: 8,
@@ -120,6 +130,7 @@ export default {
 					email: 'rtitterton7@nydailynews.com',
 					gender: 'Male',
 					title: 'Technical Writer',
+					status: false,
 				},
 				{
 					id: 9,
@@ -127,6 +138,7 @@ export default {
 					email: 'gapplewhite8@reverbnation.com',
 					gender: 'Female',
 					title: 'GIS Technical Architect',
+					status: true,
 				},
 				{
 					id: 10,
@@ -134,6 +146,7 @@ export default {
 					email: 'nmulgrew9@plala.or.jp',
 					gender: 'Female',
 					title: 'Staff Scientist',
+					status: true,
 				},
 				{
 					id: 11,
@@ -141,6 +154,7 @@ export default {
 					email: 'crimingtona@usnews.com',
 					gender: 'Female',
 					title: 'Assistant Professor',
+					status: false,
 				},
 				{
 					id: 12,
@@ -148,6 +162,7 @@ export default {
 					email: 'megglesonb@elpais.com',
 					gender: 'Male',
 					title: 'Recruiting Manager',
+					status: false,
 				},
 				{
 					id: 13,
@@ -155,6 +170,7 @@ export default {
 					email: 'ccaulketc@cbsnews.com',
 					gender: 'Male',
 					title: 'Safety Technician IV',
+					status: true,
 				},
 				{
 					id: 14,
@@ -162,6 +178,7 @@ export default {
 					email: 'sswynfend@cpanel.net',
 					gender: 'Female',
 					title: 'Environmental Specialist',
+					status: true,
 				},
 				{
 					id: 15,
@@ -169,6 +186,7 @@ export default {
 					email: 'iragglese@cbc.ca',
 					gender: 'Female',
 					title: 'VP Sales',
+					status: true,
 				},
 				{
 					id: 16,
@@ -176,6 +194,7 @@ export default {
 					email: 'kminesf@topsy.com',
 					gender: 'Male',
 					title: 'Administrative Officer',
+					status: true,
 				},
 				{
 					id: 17,
@@ -183,6 +202,7 @@ export default {
 					email: 'sjudrong@jigsy.com',
 					gender: 'Male',
 					title: 'Staff Scientist',
+					status: true,
 				},
 				{
 					id: 18,
@@ -190,6 +210,7 @@ export default {
 					email: 'cmarietonh@theatlantic.com',
 					gender: 'Male',
 					title: 'Paralegal',
+					status: true,
 				},
 				{
 					id: 19,
@@ -197,6 +218,7 @@ export default {
 					email: 'plotteringtoni@netvibes.com',
 					gender: 'Female',
 					title: 'Marketing Assistant',
+					status: true,
 				},
 				{
 					id: 20,
@@ -204,6 +226,7 @@ export default {
 					email: 'mthomsj@webeden.co.uk',
 					gender: 'Male',
 					title: 'Actuary',
+					status: false,
 				},
 			],
 		};
@@ -211,7 +234,8 @@ export default {
 	computed: {},
 	methods: {
 		modalSetting(item) {
-			this.itemModal = item;
+			this.itemModal.name = item.name;
+			this.itemModal.title = item.title;
 			this.$root.$emit('bv::show::modal', 'setting');
 		},
 		uploadImage(e) {
@@ -296,8 +320,8 @@ export default {
 		onSelect(items) {
 			this.selected = items;
 		},
-		showModalStatus() {
-			if (this.status === true) {
+		showModalStatus(item) {
+			if (item.status === true) {
 				this.active = false;
 			} else {
 				this.active = true;

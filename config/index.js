@@ -40,7 +40,7 @@ module.exports = {
 		port: 8686,
 		enableESLintLoader: false,
 		enableTSLintLoader: false,
-		proxyTable: {'/api': {target: '192.168.0.161:5000', changeOrigin: false}}
+		proxyTable: {'/api': {target: '35.198.246.115:1691', changeOrigin: false}}
 	},
 	useHttps: false,
 	prePush: [

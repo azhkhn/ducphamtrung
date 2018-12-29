@@ -34,7 +34,7 @@
 					</b-col>
 				</b-row>
 			</md-app-toolbar>
-			<md-app-drawer :md-active.sync="menuVisible" md-persistent="full">
+			<md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
 				<md-toolbar class="md-transparent" md-elevation="0">
 				<span>Menu</span>
 				<div class="md-toolbar-section-end">

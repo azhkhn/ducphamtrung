@@ -26,7 +26,7 @@
 						</md-field>
 					</md-table-toolbar>
 					<md-table-row slot="md-table-row" slot-scope="{ item }" md-selectable="single" md-auto-select >
-						<md-table-cell md-label="STT" md-sort-by="id" md-numeric>{{ item.id }}</md-table-cell>
+						<md-table-cell md-label="STT" md-sort-by="id" md-numeric class="text-center">{{ item.id }}</md-table-cell>
 						<md-table-cell md-label="Tên nhân viên" md-sort-by="title">{{ item.title }}</md-table-cell>
 						<md-table-cell md-label="Phòng ban" md-sort-by="title">{{ item.title }}</md-table-cell>
 						<md-table-cell md-label="Chức vụ" md-sort-by="title">{{ item.title }}</md-table-cell>
@@ -34,8 +34,8 @@
 						<md-table-cell md-label="Địa chỉ" md-sort-by="email">{{ item.email }}</md-table-cell>
 						<md-table-cell md-label="Giới tính" md-sort-by="gender">{{ item.gender }}</md-table-cell>
 						<md-table-cell md-label="Số điện thoại" md-sort-by="title">{{ item.title }}</md-table-cell>
-						<md-table-cell md-label="Trạng thái" md-sort-by="title"><md-switch v-model="status" class="md-primary" @change="showModalStatus"></md-switch></md-table-cell>
-						<md-table-cell md-label="Hành động" md-sort-by="title">
+						<md-table-cell md-label="Trạng thái" md-sort-by="title" class="text-center"><md-switch v-model="item.status" class="md-primary" @change="showModalStatus(item)"></md-switch></md-table-cell>
+						<md-table-cell md-label="Hành động" md-sort-by="title" class="text-center">
 							<!-- <div style="width:110px">
 								<span><b-button variant="link" style="width:50px"><img src="~icons/edit-blue.png" style="width:23px;height:23px"/></b-button></span>
 								<span> -->
@@ -141,12 +141,12 @@
 															<b-row>
 																<b-col md="4">
 																	<b-button :variant="variantEditUserGentlemen" size="md"  @click="genderEditUser(1)"
-																		style=" width: 150px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('Gentlemen')}}
+																		style=" width: 100px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('Gentlemen')}}
 																	</b-button>
 																</b-col>
 																<b-col>
 																	<b-button :variant="variantEditUserLady" size="md" @click="genderEditUser(0)"
-																		style=" width: 150px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('Lady')}}
+																		style=" width: 100px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('Lady')}}
 																	</b-button>
 																</b-col>
 															</b-row>
@@ -261,12 +261,12 @@
 															<b-row>
 																<b-col md="4">
 																	<b-button :variant="variantEditUserAdmin" size="md"  @click="RoleEditUser(item.role,'ROLE_TRAVEL_AGENT_ADMIN')"
-																		style=" width: 150px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('Admin')}}
+																		style=" width: 100px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('Admin')}}
 																	</b-button>
 																</b-col>
 																<b-col >
 																	<b-button :variant="variantEditUserUser" size="md" @click="RoleEditUser(item.role,'ROLE_TRAVEL_AGENT_USER')"
-																		style=" width: 150px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('User')}}
+																		style=" width: 100px; height: 35px; border-radius: 40px 40px 40px 40px;">{{$t('User')}}
 																	</b-button>
 																</b-col>
 															</b-row>
