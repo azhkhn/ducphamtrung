@@ -21,10 +21,9 @@
 					</span>
 					<form novalidate class="md-layout" @submit.prevent="validateUser">
 						 <md-field :class="getValidationClass('email')">
-							<label for="email">E-mail</label>
-							<md-input type="email" name="email" id="email" autocomplete="email" v-model="form.email"  />
-							<span class="md-error" v-if="!$v.form.email.required">Email là bắt buộc</span>
-							<span class="md-error" v-else-if="!$v.form.email.email">Email không hợp lệ</span>
+							<label for="email">Tên đăng nhập</label>
+							<md-input type="email" name="email" id="email" v-validate="'required'"  v-model="form.email"  />
+							<span class="text-danger errorpass" v-if="errors.has('email')">{{ $t('LOGIN_ERROR_REQUIRED') }}</span>
 						</md-field>
 						<md-field>
 							<label>{{$t('PASSWORD_LBL_LOGIN')}} </label>

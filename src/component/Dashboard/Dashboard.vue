@@ -19,9 +19,9 @@
 					</b-col>
 					<b-col>
 						<b-navbar toggleable type="dark" style="float:right">
-							<b-navbar-nav class="mr-5 mt-2">
+							<!-- <b-navbar-nav class="mr-5 mt-2">
 								<b-button variant="warning" style="color:#fff" @click="chamcong">Chấm công</b-button>
-							</b-navbar-nav>
+							</b-navbar-nav> -->
 							<b-navbar-nav>
 								<icon name="user-circle" class="mt-3" style="color:#fff" scale="1.3"></icon>
 								<b-nav-item-dropdown :text="user" right style="" class="itemheader text-dark mt-2">
@@ -88,7 +88,7 @@
 						<md-list-item class="md-inset" @click="currentviewPage('Rewwards')" >
 							<b-row>
 								<b-col md="1"><icon class="" name="user" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col>loại khen thưởng</b-col>
+								<b-col>Loại khen thưởng</b-col>
 							</b-row>
 						</md-list-item>
 						<!-- <md-list-item class="md-inset" @click="currentviewPage('Danhsachkt')" >
