@@ -30,6 +30,7 @@ import Contracts from '../component/Contracts';
 import ListDepartments from '../component/ListDepartments';
 import Member from '../component/Member';
 import Rewwards from '../component/Rewwards';
+import Trangchu from '../component/Trangchu';
 // add components you want to register globally
 
 export default {
@@ -65,4 +66,5 @@ export default {
 	ListDepartments,
 	Member,
 	Rewwards,
+	Trangchu,
 };

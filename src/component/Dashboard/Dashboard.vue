@@ -44,7 +44,7 @@
 				</div>
 				</md-toolbar>
 				<md-list :md-expand-single="true">
-				<md-list-item  md-expand @click="menuVisible=true">
+				<md-list-item  md-expand @click="menuVisible=true" v-if="this.$store.getters['user/roles'] === '1' || this.$store.getters['user/roles'] === '2'">
 					<img src="~icons/Pending-blue.png" width="30px" height="30px" />
 					<span class="md-list-item-text ml-2">Phòng ban</span>
 					<md-list slot="md-expand" >
@@ -57,7 +57,7 @@
 
 					</md-list>
 				</md-list-item>
-				<md-list-item md-expand @click="menuVisible=true">
+				<md-list-item md-expand @click="menuVisible=true" v-if="this.$store.getters['user/roles'] === '1' || this.$store.getters['user/roles'] === '2'">
 					<img src="~icons/Room Type-blue.png" width="30px" height="30px" />
 					<span class="md-list-item-text ml-2">Hồ sơ</span>
 					<md-list slot="md-expand">
@@ -81,7 +81,7 @@
 						</md-list-item>
 					</md-list>
 				</md-list-item>
-				<md-list-item md-expand @click="menuVisible=true">
+				<md-list-item md-expand @click="menuVisible=true" v-if="this.$store.getters['user/roles'] === '1' || this.$store.getters['user/roles'] === '2'">
 					<img src="~icons/Pending-blue.png" width="30px" height="30px" />
 					<span class="md-list-item-text ml-2">Quản lý khen thưởng</span>
 					<md-list slot="md-expand">
@@ -99,7 +99,7 @@
 						</md-list-item> -->
 					</md-list>
 				</md-list-item>
-				<md-list-item md-expand @click="menuVisible=true">
+				<md-list-item md-expand @click="menuVisible=true" v-if="this.$store.getters['user/roles'] === '1' || this.$store.getters['user/roles'] === '3'">
 					<img src="~icons/Pending-blue.png" width="30px" height="30px" />
 					<span class="md-list-item-text ml-2">Quản lý lương</span>
 					<md-list slot="md-expand">

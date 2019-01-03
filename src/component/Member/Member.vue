@@ -49,6 +49,146 @@
 				</md-table>
 			</b-col>
 		</b-row>
+		<b-modal id="Creat" hide-footer hide-header >
+			<b-row>
+				<b-col class="text-center"><b>Thêm mới người dùng</b></b-col>
+			</b-row>
+			<br>
+			<b-row>
+				<b-col>
+					<b-row>
+						<b-col>
+							<b-row>
+								<b-col>Tên đăng nhập</b-col>
+							</b-row>
+							<b-row>
+								<b-col>
+									<b-form-group  class="validateProfile"  label-size="md" label-for="Id" label-text-align="right" >
+										<b-form-input id="Id" type="text" name="Id" :formatter="format" v-model.trim="itemAdd.username" ></b-form-input>
+									</b-form-group>
+									<b-row >
+										<b-col >
+											<span class="text-danger" v-if="itemAdd.username === ''">
+												{{$t('ValidateLocation_cb_AvaiSearch')}}
+											</span>
+										</b-col>
+									</b-row>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col>
+							<b-row>
+								<b-col>Tên đầy đủ</b-col>
+							</b-row>
+							<b-row>
+								<b-col>
+									<b-form-group  class="validateProfile"  label-size="md" label-for="fullNameEdit" label-text-align="right">
+										<b-form-input id="Name" type="text"  v-model.trim="itemAdd.fullname" name="Name" size="md" maxlength="50"></b-form-input>
+									</b-form-group>
+									<b-row>
+										<b-col>
+											<span class="text-danger" v-if="itemAdd.fullname === ''">
+												{{$t('ValidateLocation_cb_AvaiSearch')}}
+											</span>
+										</b-col>
+									</b-row>
+								</b-col>
+							</b-row>
+						</b-col>
+					</b-row>
+					<!--  -->
+					<b-row>
+						<b-col>
+							<b-row>
+								<b-col>Số điện thoại</b-col>
+							</b-row>
+							<b-row>
+								<b-col>
+									<b-form-group  class="validateProfile"  label-size="md" label-for="Sdt" label-text-align="right" >
+										<b-form-input id="Sdt" type="text" name="Id" :formatter="format" v-model.trim="itemAdd.phoneNumber" ></b-form-input>
+									</b-form-group>
+									<b-row >
+										<b-col >
+											<span class="text-danger" v-if="phonenumber(itemAdd.phoneNumber)===false ">
+												{{$t('ValidateLocation_cb_AvaiSearch')}}
+											</span>
+										</b-col>
+									</b-row>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col>
+							<b-row>
+								<b-col>
+									<b-row>
+										<b-col>E-mail</b-col>
+									</b-row>
+									<b-row>
+										<b-col>
+											<b-form-group  class="validateProfile"  label-size="md" label-for="fullNameEdit" label-text-align="right">
+												<b-form-input id="Name" type="text"  v-model.trim="itemAdd.email" name="Name" size="md" maxlength="50"></b-form-input>
+											</b-form-group>
+											<b-row>
+												<b-col>
+													<span class="text-danger" v-if="itemAdd.email === ''">
+														{{$t('ValidateLocation_cb_AvaiSearch')}}
+													</span>
+												</b-col>
+											</b-row>
+										</b-col>
+									</b-row>
+								</b-col>
+							</b-row>
+						</b-col>
+					</b-row>
+					<b-row>
+						<b-col>
+							<b-row>
+								<b-col>Mật khẩu</b-col>
+							</b-row>
+							<b-row>
+								<b-col>
+									<b-form-group  class="validateProfile"  label-size="md" label-for="fullNameEdit" label-text-align="right">
+										<b-form-input id="Name" type="text"  v-model.trim="itemAdd.password" name="Name" size="md" maxlength="50"></b-form-input>
+									</b-form-group>
+									<b-row>
+										<b-col>
+											<span class="text-danger" v-if="itemAdd.password === ''">
+												{{$t('ValidateLocation_cb_AvaiSearch')}}
+											</span>
+										</b-col>
+									</b-row>
+								</b-col>
+							</b-row>
+						</b-col>
+						<b-col>
+							<b-row>
+								<b-col>Ghi chú</b-col>
+							</b-row>
+							<b-row>
+								<b-col>
+									<b-form-group  class="validateProfile"  label-size="md" label-for="Sdt" label-text-align="right" >
+										<b-form-textarea id="textarea1"
+														 v-model.trim="itemAdd.note"
+														placeholder="Enter something"
+														:rows="3"
+														:max-rows="6">
+										</b-form-textarea>
+									</b-form-group>
+								</b-col>
+							</b-row>
+						</b-col>
+					</b-row>
+				</b-col>
+			</b-row>
+			<br>
+			<b-row>
+				<b-col class="text-center">
+					<b-button variant="primary" style="width:100px" @click="CreatUser">Thêm mới</b-button>
+					<b-button variant="danger" style="width:100px" @click="Cancel('Edit')">Hủy bỏ</b-button>
+				</b-col>
+			</b-row>
+		</b-modal>
 		<b-modal id="Edit" hide-footer hide-header >
 			<b-row>
 				<b-col class="text-center"><b>Chỉnh sửa thông tin người dùng</b></b-col>

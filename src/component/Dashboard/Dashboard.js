@@ -11,7 +11,7 @@ export default {
 			user: this.$store.getters['rememberMe/rememberPassword'].fullName,
 			menuVisible: true,
 			showSidepanel: true,
-			currentView: 'SalaryRecords',
+			currentView: 'Trangchu',
 			expandNews: false,
 			expandSingle: false,
 			itemss: {
