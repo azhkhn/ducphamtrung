@@ -20,7 +20,7 @@
 					<b-col>
 						<b-navbar toggleable type="dark" style="float:right">
 							<b-navbar-nav class="mr-5 mt-2">
-								<b-button variant="warning" style="color:#fff">Chấm công</b-button>
+								<b-button variant="warning" style="color:#fff" @click="chamcong">Chấm công</b-button>
 							</b-navbar-nav>
 							<b-navbar-nav>
 								<icon name="user-circle" class="mt-3" style="color:#fff" scale="1.3"></icon>
@@ -34,7 +34,7 @@
 					</b-col>
 				</b-row>
 			</md-app-toolbar>
-			<md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
+			<md-app-drawer :md-active.sync="menuVisible">
 				<md-toolbar class="md-transparent" md-elevation="0">
 				<span>Menu</span>
 				<div class="md-toolbar-section-end">
@@ -46,26 +46,15 @@
 				<md-list :md-expand-single="true">
 				<md-list-item  md-expand @click="menuVisible=true">
 					<img src="~icons/Pending-blue.png" width="30px" height="30px" />
-					<span class="md-list-item-text ml-2">Chấm công</span>
+					<span class="md-list-item-text ml-2">Phòng ban</span>
 					<md-list slot="md-expand" >
-						<md-list-item class="md-inset" @click="currentviewPage('HRRecords')">
+						<md-list-item class="md-inset" @click="currentviewPage('ListDepartments')">
 							<b-row>
 								<b-col md="2"><icon class="" name="user" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Bảng tổng hợp công</b-col>
+								<b-col>Danh sách phòng ban</b-col>
 							</b-row>
 						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('AffiliateNetwork')">
-							<b-row>
-								<b-col md="2"><icon class="" name="address-book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Theo dõi vào ra</b-col>
-							</b-row>
-						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('SalaryRecords')">
-							<b-row>
-								<b-col md="2"><icon class="" name="book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Danh sách lương</b-col>
-							</b-row>
-						</md-list-item>
+
 					</md-list>
 				</md-list-item>
 				<md-list-item md-expand @click="menuVisible=true">
@@ -78,68 +67,46 @@
 								<b-col> Hồ sơ nhân sự</b-col>
 							</b-row>
 						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('AffiliateNetwork')">
+						<md-list-item class="md-inset" @click="currentviewPage('Member')" v-if="this.$store.getters['user/roles'] === '1'">
 							<b-row>
 								<b-col md="2"><icon class="" name="address-book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Hợp đồng nhân sự</b-col>
+								<b-col>Người dùng</b-col>
 							</b-row>
 						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('SalaryRecords')">
+						<md-list-item class="md-inset" @click="currentviewPage('Contracts')" v-if="this.$store.getters['user/roles'] === '1'">
 							<b-row>
 								<b-col md="2"><icon class="" name="book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Lương cơ bản</b-col>
+								<b-col>Hợp đồng</b-col>
 							</b-row>
 						</md-list-item>
 					</md-list>
-				</md-list-item>
-				<md-list-item @click="menuVisible=true">
-					<img src="~icons/Pending-blue.png" width="30px" height="30px" />
-					<span class="md-list-item-text ml-2">Báo cáo</span>
 				</md-list-item>
 				<md-list-item md-expand @click="menuVisible=true">
 					<img src="~icons/Pending-blue.png" width="30px" height="30px" />
 					<span class="md-list-item-text ml-2">Quản lý khen thưởng</span>
 					<md-list slot="md-expand">
-						<md-list-item class="md-inset" @click="currentviewPage('Danhsachkt')" >
+						<md-list-item class="md-inset" @click="currentviewPage('Rewwards')" >
+							<b-row>
+								<b-col md="1"><icon class="" name="user" scale="1" style="color:#448aff"></icon></b-col>
+								<b-col>loại khen thưởng</b-col>
+							</b-row>
+						</md-list-item>
+						<!-- <md-list-item class="md-inset" @click="currentviewPage('Danhsachkt')" >
 							<b-row>
 								<b-col md="1"><icon class="" name="user" scale="1" style="color:#448aff"></icon></b-col>
 								<b-col> Danh sách khen thưởng</b-col>
 							</b-row>
-						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('AffiliateNetwork')">
-							<b-row>
-								<b-col md="2"><icon class="" name="address-book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col>Chế độ khen thưởng</b-col>
-							</b-row>
-						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('Khenthuong')">
-							<b-row>
-								<b-col md="2"><icon class="" name="book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Thêm khen thưởng</b-col>
-							</b-row>
-						</md-list-item>
+						</md-list-item> -->
 					</md-list>
 				</md-list-item>
 				<md-list-item md-expand @click="menuVisible=true">
 					<img src="~icons/Pending-blue.png" width="30px" height="30px" />
-					<span class="md-list-item-text ml-2">Quản lý kỉ luật</span>
+					<span class="md-list-item-text ml-2">Quản lý lương</span>
 					<md-list slot="md-expand">
-						<md-list-item class="md-inset" @click="currentviewPage('Danhsachkyluat')">
-							<b-row>
-								<b-col md="2"><icon class="" name="user" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Danh sách Kỉ luật</b-col>
-							</b-row>
-						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('AffiliateNetwork')">
-							<b-row>
-								<b-col md="2"><icon class="" name="address-book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col>Chế độ khen thưởng</b-col>
-							</b-row>
-						</md-list-item>
 						<md-list-item class="md-inset" @click="currentviewPage('SalaryRecords')">
 							<b-row>
-								<b-col md="2"><icon class="" name="book" scale="1" style="color:#448aff"></icon></b-col>
-								<b-col> Lương cơ bản</b-col>
+								<b-col md="2"><icon class="" name="user" scale="1" style="color:#448aff"></icon></b-col>
+								<b-col> Danh sách lương</b-col>
 							</b-row>
 						</md-list-item>
 					</md-list>

@@ -9,9 +9,9 @@ export default {
 	data() {
 		return {
 			user: this.$store.getters['rememberMe/rememberPassword'].fullName,
-			menuVisible: false,
+			menuVisible: true,
 			showSidepanel: true,
-			currentView: 'ApplyforAccess',
+			currentView: 'SalaryRecords',
 			expandNews: false,
 			expandSingle: false,
 			itemss: {
@@ -29,7 +29,84 @@ export default {
 		// this.callApiDashBoard();
 	},
 	methods: {
-		thems(th){
+		chamcong() {
+			const today = new Date();
+			const now = new Date();
+			now.setHours(now.getHours() + 8);
+			console.log('time', now);
+			this.$gateway
+				.post(`/timekeeping/create`, {
+					value: {
+						employeeId: 'NVP30122018KT01',
+						date: this.$moment(today.setDate(today.getDate())).format('DD-MM-YYYY'),
+						timeIn: this.$moment(today.setDate(today.getDate())).format('HH:mm:ss'),
+						timeOut: this.$moment(now).format('HH:mm:ss'),
+					},
+					hashed: 'string',
+				})
+				.then(response => {
+					if (response.data.status === 'SUCCESS') {
+						this.$swal({
+							position: 'center',
+							type: 'success',
+							title: 'xin cảm ơn',
+							showConfirmButton: false,
+							timer: 1500,
+						});
+					}
+				});
+		},
+		cfchangePassword(e) {
+			if (this.itemss.currentPass === '' && this.itemss.newPass === '' && this.itemss.cfnewPass === '') {
+				this.errorChangePassword = false;
+			} else if (this.itemss.newPass.length < 8) {
+				this.errorChangePassword = false;
+			} else if (this.itemss.newPass !== this.itemss.cfnewPass) {
+				this.errorChangePassword = true;
+				this.errorCfPassword = false;
+			} else {
+				this.$gateway
+					.post(`/member/change-password`, {
+						value: {
+							username: this.$store.getters['user/userName'],
+							password: e.currentPass,
+							newPassword: e.newPass,
+						},
+						hashed: 'string',
+					})
+					.then(response => {
+						if (response.data.status === 'SUCCESS') {
+							this.$swal({
+								position: 'top-end',
+								type: 'success',
+								title: this.$t('ChangPassword_Success'),
+								showConfirmButton: false,
+								timer: 1500,
+							}).then(() => {
+								this.$store.commit(UserMutationTypes.SET_USER_INFO, null);
+								this.$store.commit(SearchTempMutationTypes.SET_TEMP, []);
+								this.$store.commit(BuyMutationTypes.SET_TOTAL, 0);
+								this.$store.commit(BuyMutationTypes.SET_BOOKINGS, []);
+								this.$store.commit(BuyMutationTypes.SET_CURRENT, 'ApplyforAccess');
+								this.$store.commit(SearchTempMutationTypes.SET_SEEN, []);
+								getRouter().push('/login');
+							});
+						} else {
+							this.$swal({
+								position: 'top-end',
+								type: 'error',
+								title: this.$t('ChangPassword_Error'),
+								showConfirmButton: false,
+								timer: 1500,
+							}).then(() => {
+								// window.location.reload(true);
+							});
+						}
+					});
+				this.$root.$emit('bv::hide::modal', 'modalChangePassword');
+			}
+		},
+		thems(th) {
 			this.them = th;
 		},
 		myinfo() {

@@ -25,6 +25,11 @@ import SalaryRecords from '../component/SalaryRecords';
 import Khenthuong from '../component/Khenthuong';
 import Danhsachkt from '../component/Danhsachkt';
 import Danhsachkyluat from '../component/Dachsachkyluat';
+import Testt from '../component/Testt';
+import Contracts from '../component/Contracts';
+import ListDepartments from '../component/ListDepartments';
+import Member from '../component/Member';
+import Rewwards from '../component/Rewwards';
 // add components you want to register globally
 
 export default {
@@ -55,5 +60,9 @@ export default {
 	Khenthuong,
 	Danhsachkt,
 	Danhsachkyluat,
-
+	Testt,
+	Contracts,
+	ListDepartments,
+	Member,
+	Rewwards,
 };

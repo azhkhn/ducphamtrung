@@ -16,7 +16,7 @@ export default {
 	state: {
 		accessToken: '',
 		userName: '',
-		roles: [],
+		roles: '',
 		menu: {},
 		id: '',
 		currentLangCode: 'vi',
@@ -104,11 +104,7 @@ export default {
 			state.id = payload;
 		},
 		[SET_ROLE]: (state, payload) => {
-			if (Array.isArray(payload)) {
-				state.roles = payload;
-			} else {
-				state.roles.splice(payload, 1);
-			}
+			state.roles = payload;
 		},
 	},
 	actions: {},

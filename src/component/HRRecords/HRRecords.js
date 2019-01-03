@@ -1,10 +1,14 @@
 import { validationMixin } from 'vuelidate';
 import { required, email, minLength, maxLength } from 'vuelidate/lib/validators';
+import DatePicker from 'vue2-datepicker';
+import Calendar from 'vue2-slot-calendar';
+import DateRangePicker from 'vue2-daterange-picker';
+import Datepicker from 'vuejs-datepicker';
 
 const toLower = text => text.toString().toLowerCase();
 const searchByName = (items, term) => {
 	if (term) {
-		return items.filter(item => toLower(item.name).includes(toLower(term)));
+		return items.filter(item => toLower(item.fullname).includes(toLower(term)));
 	}
 
 	return items;
@@ -42,31 +46,77 @@ export default {
 				address: '',
 				designation: '',
 			},
-			itemAdd: {
-				userName: '',
-				fullName: '',
-				mobile: '',
-				createdDate: '',
-				updateDate: '',
-				role: 'ROLE_TRAVEL_AGENT_ADMIN',
-				status: true,
-				tittle: '',
-				email: '',
+			itemEdit: {
+				id: '',
+				fullname: '',
+				birthday: '',
 				gender: 0,
-				password: '',
-				cfpassword: '',
-				address: '',
-				designation: '',
+				currentAddress: '',
+				wardId: 0,
+				phone: '',
+				email: '',
+				educationLevel: 0,
+				specializeId: '',
+				languageLevel: 0,
+				departmentId: '',
+				positionId: '',
+				dayInCompany: '',
+				active: true,
+			},
+			itemAdd: {
+				id: '',
+				fullname: '',
+				birthday: '',
+				gender: 0,
+				currentAddress: '',
+				wardId: 0,
+				phone: '',
+				email: '',
+				educationLevel: 0,
+				specializeId: '',
+				languageLevel: 0,
+				departmentId: '',
+				positionId: '',
+				dayInCompany: '',
+				thanhPho: '',
+				quanHuyen: '',
+				phuongXa: '',
+				active: true,
 			},
 			itemModal: {
-				name: '',
-				title: '',
+				fullname: '',
+				id: '',
+				departmentName: '',
+			},
+			modalInfo: {
+				fullname: '',
+				id: '',
 			},
 			previewImage: null,
 			variantEditUserGentlemen: '',
 			variantEditUserLady: '',
 			variantEditUserAdmin: '',
 			variantEditUserUser: '',
+			list: [],
+			ListDepartments: [],
+			educationLevel: [
+				{ value: 0, text: 'Cao đẳng' },
+				{ value: 1, text: 'Đại học' },
+				{ value: 2, text: 'Thạc sỹ' },
+				{ value: 3, text: 'Tiến sỹ' },
+				{ value: 4, text: 'Trung cấp' },
+			],
+			languageLevel: [
+				{ value: 0, text: 'English' },
+				{ value: 1, text: 'German' },
+				{ value: 2, text: 'Japan' },
+				{ value: 3, text: 'Chinese' },
+				{ value: 4, text: 'Vietnamese' },
+				{ value: 5, text: 'French' },
+			],
+			listthanhpho: [],
+			// listquanhuyen: [],
+			// listphuongxa: [],
 			users: [
 				{
 					id: 1,
@@ -231,17 +281,199 @@ export default {
 			],
 		};
 	},
-	computed: {},
+	components: {
+		DatePicker,
+		Calendar,
+		DateRangePicker,
+		Datepicker,
+	},
+	computed: {
+		listquanhuyen() {
+			const arr = [];
+			this.$gateway
+				.post(`/location/get-district-by-province`, {
+					value: {
+						code: this.itemAdd.thanhPho,
+					},
+					hashed: 'string',
+				})
+				// eslint-disable-next-line consistent-return
+				.then(response => {
+					const repons = response.data.value;
+					if (repons !== null) {
+						repons.forEach(element => {
+							arr.push(element);
+						});
+					}
+				});
+			return arr;
+		},
+		listphuongxa() {
+			const arr = [];
+			this.$gateway
+				.post(`/location/get-ward-by-district`, {
+					value: {
+						code: this.itemAdd.quanHuyen,
+					},
+					hashed: 'string',
+				})
+				// eslint-disable-next-line consistent-return
+				.then(response => {
+					const repons = response.data.value;
+					if (repons !== null) {
+						repons.forEach(element => {
+							arr.push(element);
+						});
+					}
+				});
+			return arr;
+		},
+	},
 	methods: {
+		callApilocation() {
+			this.$gateway.get(`/location/get-all-provinces`).then(response => {
+				const repons = response.data.value;
+				if (repons !== null) {
+					repons.forEach(element => {
+						this.listthanhpho.push(element);
+					});
+				}
+			});
+		},
+		creat() {
+			this.$gateway
+				.post(`/employee/create`, {
+					value: {
+						id: this.itemAdd.id,
+						fullname: this.itemAdd.fullname,
+						birthday: this.itemAdd.birthday,
+						gender: this.itemAdd.gender,
+						currentAddress: this.itemAdd.currentAddress,
+						wardId: this.itemAdd.wardId,
+						phone: this.itemAdd.phone,
+						email: this.itemAdd.email,
+						educationLevel: this.itemAdd.educationLevel,
+						specializeId: this.itemAdd.specializeId,
+						languageLevel: this.itemAdd.languageLevel,
+						departmentId: this.itemAdd.departmentId,
+						positionId: this.itemAdd.positionId,
+						payrollDay: this.itemAdd.payrollDay,
+						dayInCompany: this.itemAdd.dayInCompany,
+						active: true,
+					},
+					hashed: 'string',
+				})
+				.then(response => {
+					const repons = response.data.value;
+					if (repons !== null) {
+						this.ListDepartments = [];
+						this.callApiGetAll();
+						this.$swal({
+							position: 'center',
+							type: 'success',
+							title: 'Thêm mới thành công thành công',
+							showConfirmButton: false,
+							timer: 1500,
+						});
+					}
+				});
+		},
+		update() {
+			this.$gateway
+				.post(`/employee/update`, {
+					value: {
+						id: this.itemEdit.id,
+						fullname: this.itemEdit.fullname,
+						birthday: this.itemEdit.birthday,
+						gender: this.itemEdit.gender,
+						currentAddress: this.itemEdit.currentAddress,
+						wardId: this.itemEdit.wardId,
+						phone: this.itemEdit.phone,
+						email: this.itemEdit.email,
+						educationLevel: this.itemEdit.educationLevel,
+						specializeId: this.itemEdit.specializeId,
+						languageLevel: this.itemEdit.languageLevel,
+						departmentId: this.itemEdit.departmentId,
+						positionId: this.itemEdit.positionId,
+						payrollDay: this.itemEdit.payrollDay,
+						dayInCompany: this.itemEdit.dayInCompany,
+						active: this.itemEdit.active,
+					},
+					hashed: 'string',
+				})
+				.then(response => {
+					const repons = response.data.value;
+					if (repons !== null) {
+						this.ListDepartments = [];
+						this.callApiGetAll();
+						this.$swal({
+							position: 'center',
+							type: 'success',
+							title: 'Cập nhật thành công',
+							showConfirmButton: false,
+							timer: 1500,
+						});
+					}
+				});
+		},
+		callApiDepartment() {
+			this.ListDepartments = [];
+			this.$gateway.get(`/department/get-all-departments`).then(response => {
+				const repons = response.data.value;
+				if (repons !== null) {
+					repons.forEach(element => {
+						this.ListDepartments.push(element);
+					});
+				}
+			});
+		},
+		callApiGetAll() {
+			this.List = [];
+			this.$gateway.get(`/employee/get-all-employees`).then(response => {
+				const repons = response.data.value;
+				if (repons !== null) {
+					repons.forEach(element => {
+						this.List.push(element);
+					});
+					this.searched = this.List;
+				}
+			});
+		},
+		confirmDelete() {
+			this.$gateway
+				.get(`/employee/delete`, {
+					value: {
+						id: this.itemModal.id,
+					},
+					hashed: 'string',
+				})
+				.then(response => {
+					const repons = response.data.value;
+					if (repons !== null) {
+						this.$root.$emit('bv::hide::modal', 'setting');
+						this.ListDepartments = [];
+						this.callApiGetAll();
+						this.$swal({
+							position: 'center',
+							type: 'success',
+							title: 'Xóa thành công',
+							showConfirmButton: false,
+							timer: 1500,
+						});
+					}
+				});
+		},
 		modalSetting(item) {
-			this.itemModal.name = item.name;
-			this.itemModal.title = item.title;
+			this.itemModal.fullname = item.fullname;
+			this.itemModal.id = item.id;
+			this.itemModal.departmentName = item.departmentName;
 			this.$root.$emit('bv::show::modal', 'setting');
 		},
 		uploadImage(e) {
 			const image = e.target.files[0];
 			const reader = new FileReader();
 			reader.readAsDataURL(image);
+			// eslint-disable-next-line no-shadow
 			reader.onload = e => {
 				this.previewImage = e.target.result;
 				console.log(this.previewImage);
@@ -251,6 +483,25 @@ export default {
 			this.$root.$emit('bv::hide::modal', modal);
 		},
 		AddUser() {
+			this.callApilocation();
+			this.itemAdd.id = '';
+			this.itemAdd.fullname = '';
+			this.itemAdd.birthday = '';
+			this.itemAdd.gender = 0;
+			this.itemAdd.currentAddress = '';
+			this.itemAdd.wardId = 0;
+			this.itemAdd.phone = '';
+			this.itemAdd.email = '';
+			this.itemAdd.educationLevel = 0;
+			this.itemAdd.specializeId = '';
+			this.itemAdd.languageLevel = 0;
+			this.itemAdd.departmentId = '';
+			this.itemAdd.positionId = '';
+			this.itemAdd.dayInCompany = '';
+			this.itemAdd.thanhPho = '';
+			this.itemAdd.quanHuyen = '';
+			this.itemAdd.phuongXa = '';
+			this.itemAdd.active = true;
 			this.$root.$emit('bv::show::modal', 'addUer');
 		},
 		resetModal() {
@@ -293,8 +544,19 @@ export default {
 				this.variantEditUserUser = 'primary';
 			}
 		},
+		genderAddUser(number) {
+			this.itemAdd.gender = number;
+			if (number === 1) {
+				this.variantEditUserGentlemen = 'primary';
+				this.variantEditUserLady = 'link';
+			}
+			if (number === 0) {
+				this.variantEditUserGentlemen = 'link';
+				this.variantEditUserLady = 'primary';
+			}
+		},
 		genderEditUser(number) {
-			//this.item.gender = number;
+			this.itemEdit.gender = number;
 			if (number === 1) {
 				this.variantEditUserGentlemen = 'primary';
 				this.variantEditUserLady = 'link';
@@ -318,7 +580,58 @@ export default {
 			this.$v.$touch();
 		},
 		onSelect(items) {
+			this.modalInfo.id = items.id;
+			this.modalInfo.fullname = items.fullname;
+			this.$root.$emit('bv::show::modal', 'info');
 			this.selected = items;
+			this.itemEdit = items;
+			if (items.gender === 0) {
+				this.variantEditUserGentlemen = 'link';
+				this.variantEditUserLady = 'primary';
+			} else {
+				this.variantEditUserGentlemen = 'primary';
+				this.variantEditUserLady = 'link';
+			}
+		},
+		detail() {
+			this.$root.$emit('bv::hide::modal', 'info');
+		},
+		chamcong() {
+			const today = new Date();
+			const now = new Date();
+			now.setHours(now.getHours() + 8);
+			console.log('time', now);
+			this.$gateway
+				.post(`/timekeeping/create`, {
+					value: {
+						employeeId: this.modalInfo.id,
+						date: this.$moment(today.setDate(today.getDate())).format('DD-MM-YYYY'),
+						timeIn: this.$moment(today.setDate(today.getDate())).format('HH:mm:ss'),
+						timeOut: this.$moment(now).format('HH:mm:ss'),
+					},
+					hashed: 'string',
+				})
+				.then(response => {
+					if (response.data.status === 'SUCCESS') {
+						this.$root.$emit('bv::hide::modal', 'info');
+						this.$swal({
+							position: 'center',
+							type: 'success',
+							title: 'xin cảm ơn',
+							showConfirmButton: false,
+							timer: 1500,
+						});
+					} else {
+						this.$root.$emit('bv::hide::modal', 'info');
+						this.$swal({
+							position: 'center',
+							type: 'error',
+							title: 'đã chấm công. Xin cảm ơn',
+							showConfirmButton: false,
+							timer: 1500,
+						});
+					}
+				});
 		},
 		showModalStatus(item) {
 			if (item.status === true) {
@@ -328,7 +641,7 @@ export default {
 			}
 		},
 		searchOnTable() {
-			this.searched = searchByName(this.users, this.search);
+			this.searched = searchByName(this.List, this.search);
 		},
 		onConfirm() {
 			this.active = false;
@@ -341,6 +654,7 @@ export default {
 		},
 	},
 	created() {
-		this.searched = this.users;
+		this.callApiGetAll();
+		this.callApiDepartment();
 	},
 };

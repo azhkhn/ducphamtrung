@@ -82,7 +82,7 @@ export default {
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	},
-	computed:{
+	computed: {
 		heightWindow() {
 			return `${window.innerHeight}px`;
 		},
@@ -191,16 +191,12 @@ export default {
 			this.faill = 0;
 		},
 		Login() {
-
 			this.$validator
 				.validateAll()
 				.then(response1 => {
 					if (response1 === true) {
 						axios
 							.post('/api/auth/login', {
-								// // agentId: 2,
-								// password: this.form.password,
-								// username: this.form.email,
 								value: {
 									username: this.form.password,
 									password: this.form.email,
@@ -211,43 +207,32 @@ export default {
 								response => {
 									this.flag = true;
 									if (response.data.value != null) {
-										if (response.data.responseCode !== 0) {
-											this.faill = 1;
-										} else {
-											this.$store.commit(
-												UserMutationTypes.SET_CURRENTCY,
-												response.data.value.currency,
-											);
-											this.$store.commit(
-												UserMutationTypes.SET_USER_INFO,
-												response.data.value.token,
-											);
-											this.$store.commit(UserMutationTypes.SET_USER_ID, +this.form.agentId);
-											this.$store.commit(
-												RememberMeMutationTypes.SET_REMEMBER_FULLNAME,
-												response.data.value.fullName,
-											);
-											this.$store.commit(UserMutationTypes.SET_CURRENT_MENU, '/b2b/avaiSearch');
-											getRouter().push('/b2b/dashboard');
-										}
+										this.$store.commit(UserMutationTypes.SET_USER_INFO, response.data.value.token);
+										this.$store.commit(UserMutationTypes.SET_ROLE, response.data.value.user.role);
+										getRouter().push('/b2b/dashboard');
+										// if (response.data.responseCode !== 0) {
+										// 	this.faill = 1;
+										// } else {
+										// 	// this.$store.commit(
+										// 	// 	UserMutationTypes.SET_CURRENTCY,
+										// 	// 	response.data.value.currency,
+										// 	// );
+
+										// this.$store.commit(UserMutationTypes.SET_USER_ID, +this.form.agentId);
+										this.$store.commit(
+											RememberMeMutationTypes.SET_REMEMBER_FULLNAME,
+											response.data.value.user.name,
+										);
+										// 	//this.$store.commit(UserMutationTypes.SET_CURRENT_MENU, '/b2b/avaiSearch');
+										// 	getRouter().push('/b2b/dashboard');
+										// }
 									} else {
 										this.errors = 'ERROR BAD REQUEST';
 									}
 									this.flag = false;
-									return this.$gateway.get(`/v1/ta/allCurrency`);
 								},
 								error => {
 									this.errors.add(error.data);
-								},
-							)
-							.then(
-								responsemo => {
-									const list =
-										typeof responsemo.data.value !== 'undefined' ? responsemo.data.value : [];
-									this.$store.commit(UserMutationTypes.SET_RATEALL, list);
-								},
-								error => {
-									console.log('failed', error);
 								},
 							);
 					}
