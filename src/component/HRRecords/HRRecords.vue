@@ -308,10 +308,10 @@
 		<b-row>
 			<b-col class="ml-5">
 				<b-row>
-					<b-col md="4">
+					<!-- <b-col md="4">
 						<b-button variant="success" style="width:150px">Khen thưởng</b-button>
 						<b-button variant="danger" style="width:150px">Kỷ luật</b-button>
-					</b-col>
+					</b-col> -->
 					<b-col class="text-right">
 						<b-button variant="primary" @click="update" style="width:250px">
 							Cập nhật

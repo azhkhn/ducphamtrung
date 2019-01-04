@@ -114,7 +114,7 @@ export default {
 							email: this.itemAdd.email,
 							fullname: this.itemAdd.fullname,
 							note: this.itemAdd.note,
-							type: 0,
+							type: 2,
 						},
 						hashed: 'string',
 					})
