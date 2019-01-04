@@ -116,7 +116,7 @@
 			</form>
 		</b-modal>
 		<md-dialog-confirm :md-active.sync="active" :md-content="$t('FORGOT_PASS')" @md-confirm="onConfirm" />
-		<md-dialog-confirm :md-active.sync="emailnotfount" :md-content="$t('ERROR_FORGOT_PASS')" @md-confirm="onConfirm" />
+		<md-dialog-confirm :md-active.sync="emailnotfount" md-content="Không tìm thấy tài khoản. xin kiểm tra lại!" @md-confirm="onConfirm" />
 	</div>
 </template>
 

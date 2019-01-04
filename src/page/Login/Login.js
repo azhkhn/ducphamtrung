@@ -154,9 +154,7 @@ export default {
 			});
 		},
 		onConfirm() {
-			document.body.scrollTop = 0; // For Safari
-			document.documentElement.scrollTop = 0;
-			this.emailforgot = '';
+			this.emailnotfount = false;
 		},
 		onCancel() {
 			document.body.scrollTop = 0; // For Safari
@@ -206,7 +204,7 @@ export default {
 							.then(
 								response => {
 									this.flag = true;
-									if (response.data.value != null) {
+									if (response.data.status !== 'MEMBER_NOT_FOUND') {
 										this.$store.commit(UserMutationTypes.SET_USER_INFO, response.data.value.token);
 										this.$store.commit(UserMutationTypes.SET_ROLE, response.data.value.user.role);
 										getRouter().push('/b2b/dashboard');
@@ -227,7 +225,7 @@ export default {
 										// 	getRouter().push('/b2b/dashboard');
 										// }
 									} else {
-										this.errors = 'ERROR BAD REQUEST';
+										this.emailnotfount = true;
 									}
 									this.flag = false;
 								},
