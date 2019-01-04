@@ -196,15 +196,15 @@ export default {
 						axios
 							.post('/api/auth/login', {
 								value: {
-									username: this.form.password,
-									password: this.form.email,
+									username: this.form.email,
+									password: this.form.password,
 								},
 								hashed: 'string',
 							})
 							.then(
 								response => {
 									this.flag = true;
-									if (response.data.status !== 'MEMBER_NOT_FOUND') {
+									if (response.data.status === 'SUCCESS') {
 										this.$store.commit(UserMutationTypes.SET_USER_INFO, response.data.value.token);
 										this.$store.commit(UserMutationTypes.SET_ROLE, response.data.value.user.role);
 										getRouter().push('/b2b/dashboard');

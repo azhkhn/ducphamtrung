@@ -73,7 +73,7 @@
 								<b-col>Người dùng</b-col>
 							</b-row>
 						</md-list-item>
-						<md-list-item class="md-inset" @click="currentviewPage('Contracts')" v-if="this.$store.getters['user/roles'] === '1'">
+						<md-list-item class="md-inset" @click="currentviewPage('Contracts')" v-if="this.$store.getters['user/roles'] === '1' || this.$store.getters['user/roles'] === '2'">
 							<b-row>
 								<b-col md="2"><icon class="" name="book" scale="1" style="color:#448aff"></icon></b-col>
 								<b-col>Hợp đồng</b-col>
